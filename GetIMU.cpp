@@ -73,7 +73,6 @@ float GetIMU::getEULER_tilt() {
 void GetIMU::startSensor(EasyBNO055_ESP * _bno) {
 
 	bno = _bno;
-  bno->start();
 	Serial.println("BNO 055 started");
 
 }

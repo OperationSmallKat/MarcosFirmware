@@ -29,9 +29,14 @@ String* name = new String("midnight");
 GetIMU* sensor;
 ServoServer* servos;
 EasyBNO055_ESP bno;
+void otherI2CUpdate(){
+	//Serial.println("otherI2CUpdate");
+}
+
 void setup() {
   manager.setup();
   sensor = new GetIMU();
+	bno.start(&otherI2CUpdate);
   sensor->startSensor(&bno);
   Serial.println("Loading with name: " + name[0]);
   servos = new ServoServer();
