@@ -59,12 +59,15 @@ ServoServer::~ServoServer() {
 // User data is written into the buffer to send it back
 void ServoServer::event(float *buffer) {
   uint8_t *bBuffer = (uint8_t *)buffer;
-
+  //Serial.print("\r\n Servo Packet ");
   for (int i = 0; i < MAX_POSSIBLE_SERVOS; i++) {
     if (servoPins[i] < 0) {
       continue;
     }
-    if(buffer[i]>0&& buffer[i]<254)
-    	servos[i]->write(constrain(buffer[i], 0, 180));
+    int value = bBuffer[i];
+    //Serial.print("[ "+String(i)+" , "+String(servoPins[i])+" , "+String(value)+" ]");
+
+    //if(value>0&& value<254)
+    	servos[i]->write(constrain(value, 0, 180));
   }
 }

@@ -12,8 +12,8 @@
 // User data is written into the buffer to send it back
 void GetIMU::event(float * buffer) {
 
-  bufferINTERNAL[9]=bno->orientationX;
-  bufferINTERNAL[10]=bno->orientationY;
+  bufferINTERNAL[9]=bno->orientationY;
+  bufferINTERNAL[10]=bno->orientationX;
   bufferINTERNAL[11]=bno->orientationZ;
   
 
