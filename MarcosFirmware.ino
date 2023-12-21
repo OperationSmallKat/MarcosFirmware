@@ -34,19 +34,26 @@ void otherI2CUpdate(){
 }
 
 void setup() {
-  manager.setup();
+  manager.setupScan();
+  manager.startThread();
+  servos = new ServoServer();
+  while(manager.getState()!=Connected){
+    vTaskDelay(10); //sleep 10ms
+  }
+  Serial.println("Starting Firmware Setup after WiFi connection");
   sensor = new GetIMU();
 	bno.start(&otherI2CUpdate);
   sensor->startSensor(&bno);
   Serial.println("Loading with name: " + name[0]);
-  servos = new ServoServer();
+
   coms.attach(new NameCheckerServer(name));
   coms.attach((PacketEvent*)sensor);
   coms.attach((PacketEvent*)servos);
+  Serial.println("Starting Firmware Loop");
+
 }
 
 void loop() {
-  manager.loop();
   if(manager.getState()==Connected)
     coms.server();
 }

@@ -15,15 +15,14 @@ void GetIMU::event(float * buffer) {
   bufferINTERNAL[9]=bno->orientationY;
   bufferINTERNAL[10]=bno->orientationX;
   bufferINTERNAL[11]=bno->orientationZ;
-  
+
 
 	for (int i = 0; i < NUM_IMU_VALUES; i++) {
 		buffer[i] = bufferINTERNAL[i];
 	}
+  //print();
+}
 
-}
-bool GetIMU::loop() {
-}
 void GetIMU::setXPosition(float x){
 	bufferINTERNAL[12] =x;
 }

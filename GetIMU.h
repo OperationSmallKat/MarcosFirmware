@@ -33,7 +33,7 @@ public:
 	// Buffer contains data from the packet cming in at the start of the function
 	// User data is written into the buffer to send it back
 	void event(float * buffer);
-	bool loop();
+
 	void startSensor(EasyBNO055_ESP * _bno);
 	void print();
 

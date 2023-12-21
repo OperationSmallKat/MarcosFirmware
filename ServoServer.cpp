@@ -70,4 +70,5 @@ void ServoServer::event(float *buffer) {
     //if(value>0&& value<254)
     	servos[i]->write(constrain(value, 0, 180));
   }
+
 }
