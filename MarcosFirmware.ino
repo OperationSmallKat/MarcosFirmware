@@ -14,7 +14,7 @@
 #include "ServoServer.h"
 #include "GetIMU.h"
 
-#include <Adafruit_Sensor.h>
+#include <Adafruit_Sensor.h> // Adafruit_Unified_Sensor
 #include <Adafruit_BNO055.h>
 
 #include <Wire.h>
