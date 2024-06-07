@@ -34,7 +34,7 @@ void otherI2CUpdate(){
 }
 
 void setup() {
-  manager.setupScan();
+  manager.setup();
   manager.startThread();
   servos = new ServoServer();
   while(manager.getState()!=Connected){
@@ -50,7 +50,7 @@ void setup() {
   coms.attach((PacketEvent*)sensor);
   coms.attach((PacketEvent*)servos);
   Serial.println("Starting Firmware Loop");
-
+//int test =ARDUINO_EVENT_WIFI_AP_STAIPASSIGNED;
 }
 
 void loop() {
