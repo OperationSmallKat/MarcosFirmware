@@ -44,7 +44,20 @@ ServoServer::ServoServer()
       continue;
     }
     servos[i] = new Servo();
-    servos[i]->attach(servoPins[i],1000,2000);
+    servos[i]->attach(servoPins[i],500,2500);
+  }
+  for (int i = 0; i < MAX_POSSIBLE_SERVOS; i++) {
+    if (servoPins[i] < 0) {
+      servos[i] = NULL;
+      continue;
+    }
+    servos[i]->write(90);
+  }
+  for (int i = 0; i < MAX_POSSIBLE_SERVOS; i++) {
+    if (servoPins[i] < 0) {
+      servos[i] = NULL;
+      continue;
+    }
     servos[i]->write(90);
   }
 }

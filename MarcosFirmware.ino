@@ -35,8 +35,8 @@ void otherI2CUpdate(){
 
 void setup() {
   manager.setup();
-  manager.startThread();
   servos = new ServoServer();
+  manager.startThread();
   while(manager.getState()!=Connected){
     vTaskDelay(10); //sleep 10ms
   }

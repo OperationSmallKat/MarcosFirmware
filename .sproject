@@ -1,6 +1,6 @@
 Config.Release.board.BOARD.ID=esp32
 Config.Release.board.BOARD.MENU.CPUFreq=240
-Config.Release.board.BOARD.MENU.DebugLevel=error
+Config.Release.board.BOARD.MENU.DebugLevel=warn
 Config.Release.board.BOARD.MENU.EraseFlash=all
 Config.Release.board.BOARD.MENU.EventsCore=0
 Config.Release.board.BOARD.MENU.FlashFreq=40
