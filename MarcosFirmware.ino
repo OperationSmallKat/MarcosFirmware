@@ -34,7 +34,7 @@ void otherI2CUpdate(){
 }
 
 void setup() {
-  manager.setup();
+  manager.setupAP();
   servos = new ServoServer();
   manager.startThread();
   while(manager.getState()!=Connected){
